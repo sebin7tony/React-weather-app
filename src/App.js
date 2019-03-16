@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     location:{
       locationSelected : undefined,
-      locationList : ["India","Canada"]
+      locationList : []
     }
    
   }
@@ -20,11 +20,17 @@ class App extends Component {
     })
   }
 
+  addLocation = (newLoc) =>{
+    const locList = [...this.state.location.locationList]
+    locList.push(newLoc)
+    this.setState({location : {...this.state.location, locationList:locList }})
+  }
+
 
   render() {
     return (
       <div className="App">
-        <Header locations={this.state.location.locationList} updateLocation={this.updatedLocation} />
+        <Header locations={this.state.location.locationList} updateLocation={this.updatedLocation} addLocation={this.addLocation} />
         <WeatherContainer />
         <Footer />
       </div>

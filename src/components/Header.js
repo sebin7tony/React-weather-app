@@ -1,5 +1,6 @@
 import React from 'react'
 import LocationPicker from './LocationPicker'
+import LocationAdder from './LocationAdder'
 import PropTypes from 'prop-types'
 
 function Header(props){
@@ -13,13 +14,15 @@ function Header(props){
             { props.locations.length === 0 ? undefined:
                 <LocationPicker locations={props.locations} updateLocation={props.updateLocation} />
             }
+            <LocationAdder addLocation={props.addLocation}/>
         </div>
     )
 }
 
 Header.propTypes = {
     locations : PropTypes.array,
-    updateLocation : PropTypes.func
+    updateLocation : PropTypes.func,
+    addLocation : PropTypes.func
 }
 
 export default Header
