@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header'
 import WeatherContainer from './components/WeatherContainer'
-import Footer from './components/Footer'
+//import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
@@ -31,8 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header locations={this.state.location.locationList} updateLocation={this.updatedLocation} addLocation={this.addLocation} />
-        <WeatherContainer />
-        <Footer />
+        <WeatherContainer locationList={this.state.location.locationList}/>
       </div>
     );
   }

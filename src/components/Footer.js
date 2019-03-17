@@ -2,7 +2,8 @@ import React from 'react'
 
 function Footer(){
     const footerStyle = {
-        backgroundColor : 'grey'
+        backgroundColor : 'grey',
+        position: "absolute"
     } 
 
     return(
